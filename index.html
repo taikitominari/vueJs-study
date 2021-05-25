@@ -9,8 +9,8 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   
   <div id="app">
-    <p>{{ message }}</p>
-    <p>{{ sayHi() }}</p>
+    <p v-once v-text="message"></p>
+    <p>{{ sayHi()  }}</p>
   </div>
 
   <script>
@@ -21,7 +21,8 @@
       },
       methods: {
         sayHi: function() {
-          return this.message;
+          this.message = 'Hello World'
+          return 'Hi';
         }
       }
     })
