@@ -9,16 +9,28 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   
   <div id="app">
-    <p>{{ html }}</p>
-    <!-- v-htmlは脆弱性があるため、信頼できるデータにしか使わない -->
-    <p v-html="html"></p>
+    <a v-bind:href="url">Google.com</a>
+    <!-- 省略記法あり -->
+    <a :href="url">Google.com</a>
+    <a :[attribute]="url">Google.com</a>
+
+    <a v-bind="{href: urlTwitter, id: number}">Twitter</a>
+    
+    <a v-bind="twitterObject">Twitter</a>
   </div>
 
   <script>
     new Vue({
       el: '#app',
       data: {
-        html: '<h1>h1です</h1>'
+        url: 'https://google.com',
+        urlTwitter: 'https://twitter.com',
+        number: 31,
+        attribute: 'href',
+        twitterObject: {
+          href: 'https://twitter.com',
+          id: 77
+        }
       }
     })
   </script>
