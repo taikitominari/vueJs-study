@@ -9,27 +9,28 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   
   <div id="app">
-    <a v-bind:href="url">Google.com</a>
-    <!-- 省略記法あり -->
-    <a :href="url">Google.com</a>
-    <a :[attribute]="url">Google.com</a>
-
-    <a v-bind="{href: urlTwitter, id: number}">Twitter</a>
-    
-    <a v-bind="twitterObject">Twitter</a>
+    <p>現在{{ number }}回クリックされています</p>
+    <button v-on:click="plus(2)">カウントアップ</button>
+    <p v-on:mousemove="changeMousePosition(10, $event)">マウスを乗せてください</p>
+    <p>X:{{x}}</p>
+    <p>Y:{{y}}</p>
   </div>
 
   <script>
     new Vue({
       el: '#app',
       data: {
-        url: 'https://google.com',
-        urlTwitter: 'https://twitter.com',
-        number: 31,
-        attribute: 'href',
-        twitterObject: {
-          href: 'https://twitter.com',
-          id: 77
+        number: 0,
+        x: 0,
+        y: 0
+      },
+      methods: {
+        plus: function(times) {
+          this.number += 1 * times
+        },
+        changeMousePosition: function(divideNumber, event) {
+          this.x = event.screenX / divideNumber;
+          this.y = event.screenY / divideNumber;
         }
       }
     })
