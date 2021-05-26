@@ -17,6 +17,8 @@
     </p>
     <p>X:{{x}}</p>
     <p>Y:{{y}}</p>
+    <!-- enterを押すと発火する -->
+    <input type="text" v-on:keyup.enter="myAlert">
   </div>
 
   <script>
@@ -34,6 +36,9 @@
         changeMousePosition: function(divideNumber, event) {
           this.x = event.screenX / divideNumber;
           this.y = event.screenY / divideNumber;
+        },
+        myAlert: function() {
+          alert();
         }
       }
     })
