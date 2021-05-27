@@ -9,15 +9,33 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   
   <div id="app">
-    <input type="text" v-model="message">
-    <h1>{{ message }}</h1>
+    <p>{{ counter }}</p>
+    <button v-on:click="plus">+1</button>
+    <!-- conputedプロパティは、参照先の値が変わった時のみ実行される -->
+    <!-- {{}}でプロパティを呼び出す際はcomputedを使う -->
+    <p>{{ lessThanThree }}</p>
+    <!-- {{}}でメソッドプロパティを呼び出すとは画面が再描画するたびに実行されてしまう。 -->
+    <p>{{ lessThanThreeMethod() }}</p>
   </div>
 
   <script>
     new Vue({
       el: '#app',
       data: {
-        message: 'こんにちは'
+        counter: 0
+      },
+      methods: {
+        plus: function() {
+          this.counter++;
+        },
+        lessThanThreeMethod: function() {
+          return this.counter > 3 ? '3より上' : '3以下'
+        }
+      },
+      computed: {
+        lessThanThree: function() {
+          return this.counter > 3 ? '3より上' : '3以下'
+        }
       }
     })
   </script>
