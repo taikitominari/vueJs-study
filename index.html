@@ -9,22 +9,15 @@
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   
   <div id="app">
-    <p>現在{{ number }}回クリックされています</p>
-    <!-- v-onの省略記法 @ -->
-    <button @[event]="plus">カウントアップ</button>
+    <input type="text" v-model="message">
+    <h1>{{ message }}</h1>
   </div>
 
   <script>
     new Vue({
       el: '#app',
       data: {
-        number: 0,
-        event: 'click'
-      },
-      methods: {
-        plus: function(times) {
-          this.number++;
-        }
+        message: 'こんにちは'
       }
     })
   </script>
