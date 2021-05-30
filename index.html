@@ -9,27 +9,30 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   
-  <div id="app">
-    <ul>
-      <!-- key属性はtempletでは使えない -->
-      <!-- v-forを使用する際はkeyを絶対使う！！！ -->
-      <div v-for="fruit in fruits" :key="fruit">
-        <p>{{ fruit }}</p>
-        <input type="text">
-      </div>
-    </ul>
-    <button @click="remove">先頭を削除</button>
+  <div id="app1">
+    <p>{{ message }}</p>
+  </div>
+  <div id="app2">
+    <p>{{ message }}</p>
+    <button @click="changMassage">インスタンス１のmessage変更</button>
   </div>
 
   <script>
-    new Vue({
-      el: '#app',
+  let vm1 = new Vue({
+      el: '#app1',
       data: {
-        fruits: ['りんご', 'バナナ', 'ぶどう']
+        message: "インスタンス１"
+      }
+    })
+
+   let vm2 = new Vue({
+      el: '#app2',
+      data: {
+        message: "インスタンス２"
       },
       methods: {
-        remove: function() {
-          this.fruits.shift()
+        changMassage: function() {
+          vm1.message = "変更されました"
         }
       }
     })
