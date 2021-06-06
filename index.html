@@ -9,33 +9,44 @@
 <body>
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   
-  <div id="app1">
+  <div id="app">
     <p>{{ message }}</p>
+    <p>{{name}}</p>
+    <p>{{myData}}</p>
+    <button @click="changeName">nameを変更</button>
   </div>
+
   <div id="app2">
-    <p>{{ message }}</p>
-    <button @click="changMassage">インスタンス１のmessage変更</button>
+    
   </div>
 
   <script>
-  let vm1 = new Vue({
-      el: '#app1',
+  let vm = new Vue({
+      el: '#app',
       data: {
-        message: "インスタンス１"
-      }
-    })
-
-   let vm2 = new Vue({
-      el: '#app2',
-      data: {
-        message: "インスタンス２"
+        message: "こんにちは",
+        name: '田中'
       },
       methods: {
-        changMassage: function() {
-          vm1.message = "変更されました"
+        changeName: function() {
+          this.message = '変更されました'
+        }
+      },
+      computed: {
+        myData: function(){
+          return this.$data;
         }
       }
     })
+
+    new Vue({
+      data: {
+        name: '田中'
+      },
+      template: '<h1>こんにちは、{{ name }}</h1>'
+    }).$mount('#app2')
+      
+
   </script>
 </body>
 </html>
