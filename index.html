@@ -4,18 +4,19 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Vue.js</title>
-  <style></style>
 </head>
 <body>
   <div id="app">
     <h2>TODO List</h2>
-    <form>
+    <form v-on:submit.prevent>
       <input type="text">
-      <button>ADD</button>
+      <button v-on:click="addItem">
+        Add
+      </button>
     </form>
   </div>
-
+  
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-  <script href="js/main.js"></script>
+  <script src="js/main.js"></script>
 </body>
 </html>
