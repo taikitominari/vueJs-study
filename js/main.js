@@ -8,11 +8,14 @@ let app = new Vue({
   },
   methods: {
     addItem: function(event) {
-      let todo = {
-        item: this.newItem
-      };
+      if (this.newItem !== ""){
+        let todo = {
+          item: this.newItem
+        };
 
-      this.todos.push(todo);
+        this.todos.push(todo);
+        this.newItem = "";
+      }
     }
   }
 })
