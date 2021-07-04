@@ -10,7 +10,8 @@ let app = new Vue({
     addItem: function(event) {
       if (this.newItem !== ""){
         let todo = {
-          item: this.newItem
+          item: this.newItem,
+          isDone: false
         };
 
         this.todos.push(todo);
