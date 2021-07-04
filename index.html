@@ -7,46 +7,15 @@
   <style></style>
 </head>
 <body>
-  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
-  
   <div id="app">
-    <p>{{ message }}</p>
-    <p>{{name}}</p>
-    <p>{{myData}}</p>
-    <button @click="changeName">nameを変更</button>
+    <h2>TODO List</h2>
+    <form>
+      <input type="text">
+      <button>ADD</button>
+    </form>
   </div>
 
-  <div id="app2">
-    
-  </div>
-
-  <script>
-  let vm = new Vue({
-      el: '#app',
-      data: {
-        message: "こんにちは",
-        name: '田中'
-      },
-      methods: {
-        changeName: function() {
-          this.message = '変更されました'
-        }
-      },
-      computed: {
-        myData: function(){
-          return this.$data;
-        }
-      }
-    })
-
-    new Vue({
-      data: {
-        name: '田中'
-      },
-      template: '<h1>こんにちは、{{ name }}</h1>'
-    }).$mount('#app2')
-      
-
-  </script>
+  <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
+  <script href="js/main.js"></script>
 </body>
 </html>
