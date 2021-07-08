@@ -19,7 +19,13 @@ let app = new Vue({
       }
     },
     deleteItem: function(index) {
+      let confirm = window.confirm('削除しますか？')
+
+      if( confirm ) {
         this.todos.splice(index, 1);
+      } else {
+        alert('キャンセルされました')
+      }
     }
   }
 })
