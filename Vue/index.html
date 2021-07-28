@@ -4,15 +4,19 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>Vue.js</title>
+  <title>単位変換アプリ</title>
 </head>
 <body>
   <div id="app">
-    <p>{{ message }}</p>
     <p>
-      <input type="text" v-model:value="message"> 
+      <input type="text" v-model:value="km">km
     </p>
-    <pre>{{ $data }}</pre>
+    <p>
+      <input type="text" v-model:value="m">m
+    </p>
+    <p>
+      <input type="text" v-model:value="mm">mm
+    </p>
   </div>
 
 
