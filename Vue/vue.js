@@ -1,23 +1,16 @@
 let app = new Vue({
   el: '#app',
   data: {
-    km: 0,
-    m: 0,
-    mm: 0
+    firstName: "",
+    lastName: "",
+    fullName: ""
   },
   watch: {
-    km: function(value) {
-      this.m = value * 1000
-      this.mm = value * 1000000
+    firstName: function(value) {
+      this.fullName = value + ' ' + this.lastName
     },
-    m: function(value) {
-      this.km = value / 1000
-      this.mm = value * 1000
-    },
-    mm: function(value) {
-      this.km = value / 1000000
-      this.m = value / 1000
-    },
-
+    lastName: function(value) {
+      this.fullName = this.firstName + ' '  + value
+    }
   }
 })
