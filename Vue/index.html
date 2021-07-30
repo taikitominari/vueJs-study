@@ -4,19 +4,13 @@
   <meta charset="UTF-8">
   <meta http-equiv="X-UA-Compatible" content="IE=edge">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>名前入力</title>
+  <title>オプションdeep</title>
 </head>
 <body>
   <div id="app">
-    <p>
-      firstName: <input type="text" v-model="firstName">
-    </p>
-    <p>
-      lastName: <input type="text" v-model="lastName">
-    </p>
-    <p>
-      fullName: {{ fullName }}
-    </p>
+    <ul v-for=" color in colors ">
+      <li>{{ color.name }}</li>
+    </ul>
   </div>
 
 
