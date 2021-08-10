@@ -1,9 +1,18 @@
 let app = new Vue({
   el: '#app',
   data: {
-    classObject: {
+    largeClass: {
       large: true,
-      'text-danger': false
+      'bg-gray': true
+    },
+    dangerClass: {
+      'text-danger': true
+    },
+    isLarge: true
+  },
+  methods: {
+    switchBtn: function() {
+      this.isLarge = !this.isLarge
     }
   }
 })

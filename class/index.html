@@ -9,7 +9,8 @@
 </head>
 <body>
   <div id="app">
-    Hello<sapn v-bind:class="classObject">Vue.js</sapn>
+    Hello<sapn v-bind:class="[isLarge ? largeClass : '', dangerClass]">Vue.js</sapn>
+    <button v-on:click="switchBtn">切り替え</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
