@@ -2,7 +2,7 @@ let app = new Vue({
   el: '#app',
   data: {
     isLarge: false,
-    hasError: true
+    hasError: false
   },
   methods: {
     colorBtn: function() {
