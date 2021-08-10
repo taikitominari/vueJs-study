@@ -10,9 +10,10 @@
 <body>
   <div id="app">
     <p>
-      <span v-bind:class="{large:isLarge}">Hello Vue.js</span>
+      <span v-bind:class="{large: isLarge, 'text-danger': hasError}">Hello Vue.js</span>
     </p>
-    <button v-on:click="switchBtn">切り替え</button>
+    <button v-on:click="colorBtn">色</button>
+    <button v-on:click="sizeBtn">サイズ</button>
   </div>
 
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>

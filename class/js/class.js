@@ -1,11 +1,15 @@
 let app = new Vue({
   el: '#app',
   data: {
-    isLarge: false
+    isLarge: false,
+    hasError: true
   },
   methods: {
-    switchBtn: function() {
+    colorBtn: function() {
       this.isLarge = !this.isLarge
+    },
+    sizeBtn: function() {
+      this.hasError = !this.hasError
     }
   }
 })
