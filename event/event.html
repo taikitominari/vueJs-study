@@ -8,8 +8,8 @@
 </head>
 <body>
   <div id="app">
-    <p>{{ now }}</p>
-    <button v-on:click.once="nowBtn">現在時刻</button>
+    <input v-model="message" v-on:keyup.esc.up.space="deleteBtn" type="text">
+    <p>{{ message }}</p>
   </div>
   <script src="https://cdn.jsdelivr.net/npm/vue@2"></script>
   <script src="js/event.js"></script>

@@ -1,12 +1,11 @@
 let app = new Vue({
   el: '#app',
   data: {
-    now: "00:00:00"
+    message: ''
   },
   methods: {
-    nowBtn: function(message) {
-      let date = new Date();
-      this.now = date.toLocaleTimeString();
+    deleteBtn: function() {
+      this.message = ""
     }
   }
 })
