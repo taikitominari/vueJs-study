@@ -1,14 +1,12 @@
 let app = new Vue({
   el: '#app',
   data: {
-    count: 0,
-    message: ''
+    now: "00:00:00"
   },
   methods: {
-    conutBtn: function($event , message) {
-      this.count++
-      this.message = message
-      console.log($event)
+    nowBtn: function(message) {
+      let date = new Date();
+      this.now = date.toLocaleTimeString();
     }
   }
 })
