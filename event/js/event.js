@@ -1,15 +1,14 @@
 let app = new Vue({
   el: '#app',
   data: {
-    count: 0
+    count: 0,
+    message: ''
   },
   methods: {
-    conutBtn: function(event) {
+    conutBtn: function($event , message) {
       this.count++
-      console.log(event)
-      console.log(event.target.tagName)
-      console.log(event.target.innerHTML)
-      console.log(event.target.type)
+      this.message = message
+      console.log($event)
     }
   }
 })
