@@ -1,9 +1,10 @@
-Vue.component('hello-component', {
+let helloComponent = {
   template: '<p>Hello</p>'
-})
+}
+
 let app = new Vue({
   el: '#app',
-  data: {
-
+  components: {
+    'helloComponent' : helloComponent
   }
 })
