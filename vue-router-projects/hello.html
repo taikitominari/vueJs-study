@@ -9,7 +9,7 @@
 <body>
   <div id="app">
     <router-link to="/top">Go to top</router-link>
-    <router-link to="/users">Go to User</router-link>
+    <router-link to="/users/123">Go to User</router-link>
     <router-view></router-view>
   </div>
 
@@ -17,7 +17,7 @@
   <script src="https://unpkg.com/vue-router"></script>
   <script>
     const Top = { template: '<div>Top</div>'}
-    const User = { template: '<div>User</div>'}
+    const User = { template: '<div>User {{ $route.params.userId }}</div>'}
 
     const router = new VueRouter({
       routes: [
@@ -26,7 +26,7 @@
         component: Top
         },
         {
-          path: '/users',
+          path: '/users/:userId',
           component: User
         }
       ]
